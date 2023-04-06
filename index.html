@@ -22,17 +22,143 @@
       src="https://npmcdn.com/parse/dist/parse.min.js"
     ></script>
     <script src="./js/main.js" defer></script>
+    <script>
+    function displayLike() {
+     document.getElementById("liked").innerHTML = "Liked!";
+    }
+    function Repost() {
+     document.getElementById("reposted").innerHTML = "Reposted!";
+    }
+    function Share() {
+     document.getElementById("shared").innerHTML = "Opening messages!";
+    }
+    function Commenting() {
+     document.getElementById("commenting").innerHTML = "leave a comment here";
+    }
+    function getUsername()
+    {
+      let answer1 = "JsUsername";
+
+document.getElementById("username").innerHTML =
+answer1;
+    }
+    </script>
+   
+   <style>
+
+    h4{
+      font-size: xx-small;
+      line-height: 1000;
+    }
+  .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  border: 3px solid green;
+}
+.pfp {
+  display: flex;
+  align-items: center;
+  width: auto;
+  border: 3px solid blue;
+}
+
+.contents{
+  border: 3px solid red; padding: 2%; width: 95%; 
+}
+
+    </style>
+
+
   </head>
+
+  
   <body>
-    <h1>Retrieve post age and image by caption:</h1>
-    <h2 id="display">Post Age:</h2>
-    <input id="PostCaption" type="text" placeholder="Enter Post Caption" />
-    <!input id="email" type="email" placeholder="Email" />
-    <!input id="password" type="password" placeholder="Password" />
-    <button id="createButton">Search</button>
-    <br>
-    <br>
-    <h2 id="display">Post Image:</h2>
-    <img id="image" src="" alt="Database Image">
+      <div class="bg-gradient-to-br from-sky-950 to-red-950"> 
+        <div class="bg-opacity-70 bg-black relative flex items-center" style="padding: 1%;">
+          <nav>
+            <a href="./index.html"><img src="FauLogo.png" style="max-width: 10%;" ></img></a>
+          </nav>
+          <nav class=" lg:flex items-center ml-auto text-white">
+            <ul class="flex space-x-8">
+             <li> <a href="./account"><p id="username"></p><script>getUsername() </script>
+              </a> </li>
+             <li> <a href="#">Post</a> </li>
+             <li> <a href="#">Messages</a> </li>
+             <li> <a href="#">Support</a> </li>
+          </ul>
+          </nav>
+          <div>
+       
+
+          
+          </div>
+        </div>
+<span> <p class="hidden">THIS IS WHERE POSTS ARE DISPLAYED </p>
+
+
+              
+       
+  <div  class="center" style=" padding-top: 2%; padding-bottom: 2%;">
+    <div class="bg-white bg-opacity-0 text-black contents"> 
+      <div class="pfp">
+        <img src="pfp.jpg" style="max-width: 3%;"></img>
+        <p style="padding-left: 10px">Username</p>
+      </div>
+     <h2 class="text-3xl font-serif text-center"style="padding-bottom: 2%;">
+       Post Two Title
+     </h2>
+        <div class="center">
+           <img src="postTest.jpg" style="padding: 1%">
+           </img>
+          
+        </div> 
+        <div class=" lg:flex items-center ml-auto text-pink">
+          <ul class="flex space-x-8">
+            <li>  <button onclick="displayLike()">Like</button> 
+              <p id="liked"></p> </li>
+            <li>  <button onclick="Repost()">Repost</button> 
+              <p id="reposted"></p> </li>
+            <li>  <button onclick="Share()">Share</button> 
+               <p id="shared"></p> </li>
+            <li>  <button onclick="Commenting()">Comment</button> 
+              <p id="commenting"></p> </li>
+            
+          </ul>
+      </div>
+         
+         <h3 class="font-sans text-lg"style="padding: 1%;"> description  description  description description description description description description description description description description description description description description description description description description description description description description </h3>
+     </div>
+
+          
+      </div>
+                <div  class="center" style=" padding-top: 2%; padding-bottom: 2%;">
+                  <div class="bg-white bg-opacity-0 text-black contents"> 
+                    <div class="pfp">
+                      <img src="pfp.jpg" style="max-width: 3%;"></img>
+                      <p style="padding-left: 10px">Username</p>
+                    </div>
+                  <h2 class="text-3xl font-serif text-center"style="padding-bottom: 2%;">
+                    Post One Title
+                  </h2>
+                      <div class="center">
+                        <img src="postTest.jpg" style="padding: 1%;">
+                        </img>
+                        
+                      </div> 
+          
+                      
+                      <h3 class="font-sans text-lg"style="padding: 1%;">2 description 2 description2  description 2 description 2 description 2 description description description description description description description description description description description description description description description description description description description </h3>
+                  </div>
+              </div>
+
+              </span>
+          
+
+
+
+            </div>
+        </div> 
   </body>
 </html>
