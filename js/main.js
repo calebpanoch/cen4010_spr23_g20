@@ -1,6 +1,18 @@
 // Initialize Parse
-Parse.initialize("PARSE_APP_ID", "PARSE_JS_KEY"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+Parse.initialize("JVrGVwgQsCwWg2WmUP3TTJxGa3OABHCOpgkikbQI", "NxY9i597NxYHFPeyGfB8BoKUgYUwcvXLQTzUUlDZ"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
 Parse.serverURL = "https://parseapi.back4app.com/";
+
+const currentUser = Parse.User.current();
+
+if (currentUser._localid != currentUser.getUsername()) {
+    console.log(currentUser)
+    console.log(currentUser.getUsername())
+    
+    document.getElementById("username").innerHTML = currentUser.getUsername()
+} else {
+    location.href = 'login.html';
+}
+
 
 var Posts = Parse.Object.extend("Posts");
 
@@ -60,6 +72,6 @@ function read() {
 }*/
 
 // Add on click listener to call the create parse user function
-document.getElementById("createButton").addEventListener("click", async function () {
-  read();
-});
+//document.getElementById("createButton").addEventListener("click", async function () {
+//  read();
+//});
