@@ -23,7 +23,6 @@
         ></script>
         <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
         <script src="./js/main.js" defer></script>
-        <script src="./js/posts.js" defer></script>
         <script>
             function displayLike() {
              document.getElementById("liked").innerHTML = "Liked!";
@@ -84,9 +83,10 @@
                 <ul class="flex space-x-8">
                     <li> <a href="./account"><p id="username"></p><script>getUsername() </script>
                     </a> </li>
-                    <li> <a href="#">Post</a> </li>
+                    <li> <a href="post.html">Post</a> </li>
                     <li> <a href="#">Messages</a> </li>
                     <li> <a href="#">Support</a> </li>
+                    <li> <button type="button" id="logout">Logout</button> </li>
                 </ul>
             </nav>
             <div>

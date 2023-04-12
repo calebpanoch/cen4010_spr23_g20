@@ -1,6 +1,14 @@
 Parse.initialize("JVrGVwgQsCwWg2WmUP3TTJxGa3OABHCOpgkikbQI", "NxY9i597NxYHFPeyGfB8BoKUgYUwcvXLQTzUUlDZ"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
 Parse.serverURL = "https://parseapi.back4app.com/";
 
+var currentUser = Parse.User.current();
+if (currentUser) {
+    
+} else {
+    Parse.User.logOut();
+    //location.href = 'index.html'
+}
+
 function logIn() {
     // Create a new instance of the user class
     var user = Parse.User
@@ -29,15 +37,20 @@ function signUp() {
         currUser = Parse.User.current();
         console.log(currUser)
         
-        location.href = 'login.html';
+        location.href = 'index.html';
     }).catch(function(error){
         console.log("Error: " + error.code + " " + error.message);
         document.getElementById("errorOutput").innerHTML = "Error: " + error.message
         console.log(error.code)
-        if error.code == 203 {
-            location.href = 'login.html';
-        }
-    });
+        switch (error.code) {
+            case Parse.Error.INVALID_SESSION_TOKEN:
+                Parse.User.logOut();
+                location.href = 'signUp.html';
+                break;
+
+                //... // Other Parse API errors that you want to explicitly handle
+            }
+        });
     
 }
 

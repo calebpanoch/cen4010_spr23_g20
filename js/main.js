@@ -4,7 +4,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 
 const currentUser = Parse.User.current();
 
-if (currentUser._localid != currentUser.getUsername()) {
+if (currentUser) {
     console.log(currentUser)
     console.log(currentUser.getUsername())
     
@@ -70,8 +70,12 @@ function read() {
     alert(`Error: ${error.message}`);
   }
 }*/
+function logout() {
+    Parse.User.logOut()
+    location.href = 'login.html'
+}
 
 // Add on click listener to call the create parse user function
-//document.getElementById("createButton").addEventListener("click", async function () {
-//  read();
-//});
+document.getElementById("logout").addEventListener("click", async function () {
+  logout();
+});

@@ -1,12 +1,19 @@
 Parse.initialize("JVrGVwgQsCwWg2WmUP3TTJxGa3OABHCOpgkikbQI", "NxY9i597NxYHFPeyGfB8BoKUgYUwcvXLQTzUUlDZ"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
 Parse.serverURL = "https://parseapi.back4app.com/";
 
+const currentUser = Parse.User.current();
+if (currentUser) {
+} else {
+    location.href = 'login.html';
+}
+
+
 var TestObject = Parse.Object.extend("Posts");
 
 $(document).ready(function() {
     console.log("JQuery Loaded");
 
-    $("#buttonEl").on("click", function() {
+    $("#post").on("click", function() {
         console.log("Button clicked");
 
         var fileUploadControl = $("#inputEl")[0];
@@ -27,11 +34,15 @@ $(document).ready(function() {
                 var testObj = new TestObject();
                 //set the image in field column
                 testObj.set("image", parseFile);
+                testObj.set("title",document.getElementById("title").value)
+                testObj.set("caption",document.getElementById("caption").value)
+                testObj.set("author",currentUser)
                 //save the Object ID to the database and show object ID in console
                 testObj.save().then(function() {
                     console.log(testObj.id);
                 })
             });
+            location.href = 'index.html';
         }
     });
 });
