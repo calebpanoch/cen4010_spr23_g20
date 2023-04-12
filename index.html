@@ -21,7 +21,9 @@
           type="text/javascript"
           src="https://npmcdn.com/parse/dist/parse.min.js"
         ></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
         <script src="./js/main.js" defer></script>
+        <script src="./js/posts.js" defer></script>
         <script>
             function displayLike() {
              document.getElementById("liked").innerHTML = "Liked!";
@@ -109,8 +111,9 @@
                 Post One Title
                 </h2>
                 <div class="center">
-                    <img src="./assets/postTest.jpg" style="padding: 1%">
-
+                    <img id="imageEl" src="" style="padding: 1%" alt="">
+                    <input type="file" id="inputEl" />
+                    
                 </div> 
                 <div class=" lg:flex items-center ml-auto text-pink">
                     <ul class="flex space-x-8">
@@ -120,8 +123,8 @@
                         <p id="reposted"></p> </li>
                         <li>  <button onclick="Share()">Share</button> 
                         <p id="shared"></p> </li>
-                        <li>  <button onclick="uploadPost()">Upload</button> 
-                        <p id="uploadPost"></p> </li>
+                        <li>  <button id="buttonEl">Upload Post</button> 
+                        </li>
 
                     </ul>
                 </div>
