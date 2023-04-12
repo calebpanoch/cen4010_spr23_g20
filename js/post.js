@@ -41,8 +41,8 @@ $(document).ready(function() {
                 testObj.save().then(function() {
                     console.log(testObj.id);
                 })
+                location.href = 'index.html';
             });
-            location.href = 'index.html';
         }
     });
 });

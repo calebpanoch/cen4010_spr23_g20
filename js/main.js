@@ -42,7 +42,7 @@ var newPost = `<div  class="center" align="center" style="margin: auto; padding-
                     <div class="bg-white bg-opacity-0 text-black contents"> 
                         <div class="pfp">
                             <img src="./assets/pfp.jpg" style="max-width: 3%;">
-                            <p style="padding-left: 10px">Username</p>
+                            <p style="padding-left: 10px">USERNAMEHERE</p>
                         </div>
                         <h2 class="text-3xl font-serif text-center"style="padding-bottom: 2%;">
                         TITLEHERE
@@ -81,14 +81,14 @@ $(window).scroll(function() {
         query.skip(postNum)
         postNum = postNum + 5
         postList = query.find()
-        console.log(postList)
         query.find().then(function(results) {
             console.log()
             for (let step = 0; step < 5; step++) {
               // Runs 5 times, with values of step 0 through 4.
-              console.log(results[step].get("image"))
+              console.log(results[step].get("author").get("username"))
                 
-               replaceTitle = newPost.replace("TITLEHERE", results[step].get("title"))
+                repalceUsername = newPost.replace("USERNAMEHERE", results[step].get("author").get("username"))
+               replaceTitle = repalceUsername.replace("TITLEHERE", results[step].get("title"))
                replaceCaption = replaceTitle.replace("CAPTIONHERE", results[step].get("caption"))
                replaceIMG = replaceCaption.replace("IMGSRCHERE", results[step].get("image")._url)
 
