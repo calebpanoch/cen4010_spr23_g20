@@ -71,11 +71,30 @@ var newPost = `<div  class="center" align="center" style="margin: auto; padding-
                 </div>`
 
 var postNum = 0
+query = new Parse.Query(Posts);
+
+query.addDescending("createdAt")
+query.limit(5)
+query.skip(postNum)
+postNum = postNum + 5
+postList = query.find()
+query.find().then(function(results) {
+    console.log()
+    for (let step = 0; step < 5; step++) {
+      // Runs 5 times, with values of step 0 through 4.                
+        repalceUsername = newPost.replace("USERNAMEHERE", results[step].get("author").get("username"))
+       replaceTitle = repalceUsername.replace("TITLEHERE", results[step].get("title"))
+       replaceCaption = replaceTitle.replace("CAPTIONHERE", results[step].get("caption"))
+       replaceIMG = replaceCaption.replace("IMGSRCHERE", results[step].get("image")._url)
+
+       $('#posts').append(replaceIMG);
+    }
+})
 
 $(window).scroll(function() {
    if($(window).scrollTop() + $(window).height() == $(document).height()) {
        
-        query = new Parse.Query(Posts);
+        
         query.addDescending("createdAt")
         query.limit(5)
         query.skip(postNum)
@@ -84,9 +103,7 @@ $(window).scroll(function() {
         query.find().then(function(results) {
             console.log()
             for (let step = 0; step < 5; step++) {
-              // Runs 5 times, with values of step 0 through 4.
-              console.log(results[step].get("author").get("username"))
-                
+              // Runs 5 times, with values of step 0 through 4.                
                 repalceUsername = newPost.replace("USERNAMEHERE", results[step].get("author").get("username"))
                replaceTitle = repalceUsername.replace("TITLEHERE", results[step].get("title"))
                replaceCaption = replaceTitle.replace("CAPTIONHERE", results[step].get("caption"))
