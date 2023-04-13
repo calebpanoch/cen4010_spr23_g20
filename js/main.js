@@ -50,17 +50,16 @@ var newPost = `<div  class="center" align="center" style="margin: auto; padding-
                         <div class="center">
                         <img src=IMGSRCHERE style="padding: 1%">
 
-                        </div> 
+                        </div>
+                         
                         <div class=" lg:flex items-center ml-auto text-pink">
                             <ul class="flex space-x-8">
-                                <li>  <button onclick="displayLike()">Like</button> 
+                                <li>  <button onclick="displayLike()" class="bg-indigo-500 hover:bg-indigo-100 text-black font-bold py-1 px-1 rounded">Like &#x1F44D</button>
                                 <p id="liked"></p> </li>
-                                <li>  <button onclick="Repost()">Repost</button> 
+                                <li>  <button onclick="Repost()" class="bg-indigo-500 hover:bg-indigo-100 text-black font-bold py-1 px-1 rounded">Repost &#x1F501</button> 
                                 <p id="reposted"></p> </li>
-                                <li>  <button onclick="Share()">Share</button> 
+                                <li>  <button onclick="Share()" class="bg-indigo-500 hover:bg-indigo-100 text-black font-bold py-1 px-1 rounded">Share &#x1F639</button> 
                                 <p id="shared"></p> </li>
-                                <li>  <button onclick="uploadPost()">Upload</button> 
-                                <p id="uploadPost"></p> </li>
 
                             </ul>
                         </div>
