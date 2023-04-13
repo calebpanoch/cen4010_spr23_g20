@@ -82,36 +82,37 @@ query.find().then(function(results) {
     console.log()
     for (let step = 0; step < 5; step++) {
       // Runs 5 times, with values of step 0 through 4.                
-        repalceUsername = newPost.replace("USERNAMEHERE", results[step].get("author").get("username"))
-       replaceTitle = repalceUsername.replace("TITLEHERE", results[step].get("title"))
+       replaceUsername = newPost.replace("USERNAMEHERE", results[step].get("poster"))
+       replaceTitle = replaceUsername.replace("TITLEHERE", results[step].get("title"))
        replaceCaption = replaceTitle.replace("CAPTIONHERE", results[step].get("caption"))
        replaceIMG = replaceCaption.replace("IMGSRCHERE", results[step].get("image")._url)
 
        $('#posts').append(replaceIMG);
     }
-})
-
-$(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-       
-        
-        query.addDescending("createdAt")
-        query.limit(5)
-        query.skip(postNum)
-        postNum = postNum + 5
-        postList = query.find()
-        query.find().then(function(results) {
-            console.log()
-            for (let step = 0; step < 5; step++) {
-              // Runs 5 times, with values of step 0 through 4.                
-                repalceUsername = newPost.replace("USERNAMEHERE", results[step].get("author").get("username"))
-               replaceTitle = repalceUsername.replace("TITLEHERE", results[step].get("title"))
-               replaceCaption = replaceTitle.replace("CAPTIONHERE", results[step].get("caption"))
-               replaceIMG = replaceCaption.replace("IMGSRCHERE", results[step].get("image")._url)
-
-               $('#posts').append(replaceIMG);
-            }
-        })
-       
-   }
 });
+
+//window scroll function
+$(window).scroll(function() {
+    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+        
+         
+         query.addDescending("createdAt")
+         query.limit(5)
+         query.skip(postNum)
+         postNum = postNum + 5
+         postList = query.find()
+         query.find().then(function(results) {
+             console.log()
+             for (let step = 0; step < 5; step++) {
+               // Runs 5 times, with values of step 0 through 4.                
+                repalceUsername = newPost.replace("USERNAMEHERE", results[step].get("poster"))
+                replaceTitle = repalceUsername.replace("TITLEHERE", results[step].get("title"))
+                replaceCaption = replaceTitle.replace("CAPTIONHERE", results[step].get("caption"))
+                replaceIMG = replaceCaption.replace("IMGSRCHERE", results[step].get("image")._url)
+ 
+                $('#posts').append(replaceIMG);
+             }
+         })
+        
+    }
+ });

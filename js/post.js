@@ -36,7 +36,7 @@ $(document).ready(function() {
                 testObj.set("image", parseFile);
                 testObj.set("title",document.getElementById("title").value)
                 testObj.set("caption",document.getElementById("caption").value)
-                testObj.set("author",currentUser)
+                testObj.set("poster",document.getElementById("poster").value)
                 //save the Object ID to the database and show object ID in console
                 testObj.save().then(function() {
                     console.log(testObj.id);
