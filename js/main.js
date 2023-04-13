@@ -79,7 +79,6 @@ query.skip(postNum)
 postNum = postNum + 5
 postList = query.find()
 query.find().then(function(results) {
-    console.log()
     for (let step = 0; step < 5; step++) {
       // Runs 5 times, with values of step 0 through 4.                
        replaceUsername = newPost.replace("USERNAMEHERE", results[step].get("poster"))
@@ -102,7 +101,6 @@ $(window).scroll(function() {
          postNum = postNum + 5
          postList = query.find()
          query.find().then(function(results) {
-             console.log()
              for (let step = 0; step < 5; step++) {
                // Runs 5 times, with values of step 0 through 4.                
                 repalceUsername = newPost.replace("USERNAMEHERE", results[step].get("poster"))
