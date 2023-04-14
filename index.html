@@ -24,9 +24,7 @@
         <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
         <script src="./js/main.js" defer></script>
         <script>
-            //function displayLike() {
-            //    document.getElementById("liked").innerHTML = "Liked!";
-            //}
+            
             function Repost() {
              document.getElementById("reposted").innerHTML = "Reposted!";
             }
@@ -41,7 +39,22 @@
             }
         </script>
 
+       
        <style>
+      @keyframes moveInLeft {
+        0% {
+          opacity: 0;
+          transform: translateX(-10rem); }
+        80% {
+          transform: translateX(1rem); }
+        100% {
+          opacity: 1;
+          transform: translate(0); } }
+
+            h2:hover {
+              transform: skewY(2deg) skewX(-5deg) scale(1.4);
+              text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+            }
 
             h4{
               font-size: xx-small;
@@ -52,20 +65,44 @@
               justify-content: center;
               align-items: center;
               width: auto;
-              border: 3px solid green;
+             
             }
             .pfp {
               display: flex;
               align-items: center;
               width: auto;
-              border: 3px solid blue;
+            }
+
+            .pfp:hover {
+              animation-name: moveInLeft;
+              animation-duration: 1s;
+              animation-timing-function: ease-out;
             }
 
             .contents{
-              border: 3px solid red; padding: 2%; width: 95%; 
+              padding: 2%; width: 95%;
+              border-radius: 10px;
+              box-shadow: 0px 0px 10px cyan; 
+            }
+
+            .likebutton:hover {
+              transform: skewY(2deg) skewX(2deg) scale(1.4);
+              text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+            }
+
+            .repostbutton:hover {
+              transform: skewY(2deg) skewX(2deg) scale(1.4);
+              text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+            }
+
+            .sharebutton:hover {
+              transform: skewY(2deg) skewX(2deg) scale(1.4);
+              text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
             }
 
         </style>
+
+       
 
     </head>
 
