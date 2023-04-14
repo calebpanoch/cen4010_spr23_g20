@@ -37,6 +37,8 @@ $(document).ready(function() {
                 testObj.set("title",document.getElementById("title").value)
                 testObj.set("caption",document.getElementById("caption").value)
                 testObj.set("poster",currentUser.getUsername())
+                testObj.set("likes",[])
+                testObj.set("comments",[])
                 //save the Object ID to the database and show object ID in console
                 testObj.save().then(function() {
                     console.log(testObj.id);
