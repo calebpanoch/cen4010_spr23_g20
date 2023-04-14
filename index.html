@@ -42,6 +42,25 @@
         </script>
 
        <style>
+      @keyframes moveInLeft {
+        0% {
+          opacity: 0;
+          transform: translateX(-10rem); }
+        80% {
+          transform: translateX(1rem); }
+        100% {
+          opacity: 1;
+          transform: translate(0); } }
+
+      @keyframes moveInRight {
+        0% {
+          opacity: 0;
+          transform: translateX(10rem); }
+        80% {
+          transform: translateX(-1rem); }
+        100% {
+          opacity: 1;
+          transform: translate(0); } }
 
             h4{
               font-size: xx-small;
@@ -52,17 +71,30 @@
               justify-content: center;
               align-items: center;
               width: auto;
-              border: 3px solid green;
+             
             }
             .pfp {
               display: flex;
               align-items: center;
               width: auto;
-              border: 3px solid blue;
+            }
+
+            .pfp:hover {
+              animation-name: moveInLeft;
+              animation-duration: 1s;
+              animation-timing-function: ease-out;
+            }
+
+            h2:hover {
+              animation-name: moveInRight;
+              animation-duration: 1s;
+              animation-timing-function: ease-out;
             }
 
             .contents{
-              border: 3px solid red; padding: 2%; width: 95%; 
+              padding: 2%; width: 95%;
+              border-radius: 10px;
+              box-shadow: 0px 0px 10px cyan; 
             }
 
         </style>
