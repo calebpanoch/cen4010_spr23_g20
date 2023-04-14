@@ -52,15 +52,10 @@
           opacity: 1;
           transform: translate(0); } }
 
-      @keyframes moveInRight {
-        0% {
-          opacity: 0;
-          transform: translateX(10rem); }
-        80% {
-          transform: translateX(-1rem); }
-        100% {
-          opacity: 1;
-          transform: translate(0); } }
+            h2:hover {
+              transform: skewY(2deg) skewX(-5deg) scale(1.4);
+              text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+            }
 
             h4{
               font-size: xx-small;
@@ -81,12 +76,6 @@
 
             .pfp:hover {
               animation-name: moveInLeft;
-              animation-duration: 1s;
-              animation-timing-function: ease-out;
-            }
-
-            h2:hover {
-              animation-name: moveInRight;
               animation-duration: 1s;
               animation-timing-function: ease-out;
             }
