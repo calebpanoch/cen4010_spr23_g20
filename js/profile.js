@@ -28,7 +28,9 @@ for (var i = 0; i < sURLVariables.length; i++)
 }
 
 var newPost = `
-              <div  class="center" align="center" style="margin: auto; padding-top: 2%; padding-bottom: 2%; max-width: 100%;">
+<div id="posts" class=" flex justify-center items-center h-screen">
+        <div class="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
+              <div class="center" align="center" style="margin: auto; padding-top: 2%; padding-bottom: 2%; max-width: 100%;">
                     <div class="bg-white bg-opacity-0 text-black contents"> 
                         <div class=" lg:flex items-center ml-auto text-pink">
                             <button HIDDENHERE onclick="deletPost('POSTIDHERE')" class="bg-indigo-500 hover:bg-indigo-100 text-black font-bold py-1 px-1 rounded">Delete 🗑️</button>
@@ -65,6 +67,9 @@ var newPost = `
                         <button onclick="postComment('POSTIDHERE')">Send</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 `
 
 if (user) {
