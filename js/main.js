@@ -75,7 +75,7 @@ var newPost = `
               <div  class="center" align="center" style="margin: auto; padding-top: 2%; padding-bottom: 2%; max-width: 50%;">
                     <div class="bg-white bg-opacity-0 text-black contents"> 
                         <div class=" lg:flex items-center ml-auto text-pink">
-                            <button HIDDENHERE onclick="deletPost('POSTIDHERE')" class="bg-indigo-500 hover:bg-indigo-100 text-black font-bold py-1 px-1 rounded">Delete 🗑️</button>
+                            <button HIDDENHERE onclick="deletePost('POSTIDHERE')" class="bg-indigo-500 hover:bg-indigo-100 text-black font-bold py-1 px-1 rounded">Delete 🗑️</button>
                         </div>
                         <div class="pfp">
                             <img src="./assets/pfp.jpg" style="max-width: 3%;">
