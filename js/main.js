@@ -79,7 +79,7 @@ var newPost = `
                         </div>
                         <div class="pfp">
                             <img src="./assets/pfp.jpg" style="max-width: 3%;">
-                            <p style="padding-left: 10px">USERNAMEHERE</p>
+                            <a href="/profile/?user=USERNAMEHERE" style="padding-left: 10px">USERNAMEHERE</a>
                         </div>
                         <h2 class="text-3xl font-serif text-center"style="padding-bottom: 2%;">
                         TITLEHERE
