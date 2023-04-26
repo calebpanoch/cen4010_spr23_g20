@@ -27,17 +27,28 @@ for (var i = 0; i < sURLVariables.length; i++)
     }
 }
 
+function deletePost(objectId) {
+    if (confirm("Are you sure you want to delete this post?") == true) {
+        queryObj = new Parse.Query(Posts);
+        queryObj.equalTo("objectId",objectId)
+        queryObj.first().then(function(result) {
+            result.destroy();
+            location.reload();
+        });
+    }
+}
+
 var newPost = `
 <div id="posts" class=" flex justify-center items-center h-screen">
         <div class="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
               <div class="center" align="center" style="margin: auto; padding-top: 2%; padding-bottom: 2%; max-width: 100%;">
                     <div class="bg-white bg-opacity-0 text-black contents"> 
                         <div class=" lg:flex items-center ml-auto text-pink">
-                            <button HIDDENHERE onclick="deletPost('POSTIDHERE')" class="bg-indigo-500 hover:bg-indigo-100 text-black font-bold py-1 px-1 rounded">Delete 🗑️</button>
+                            <button HIDDENHERE onclick="deletePost('POSTIDHERE')" class="bg-indigo-500 hover:bg-indigo-100 text-black font-bold py-1 px-1 rounded">Delete 🗑️</button>
                         </div>
                         <div class="pfp">
                             <img src="../assets/pfp.jpg" style="max-width: 3%;">
-                            <a href="/profile/?user=USERNAMEHERE" style="padding-left: 10px">USERNAMEHERE</a>
+                            <a href="./profile/?user=USERNAMEHERE" style="padding-left: 10px">USERNAMEHERE</a>
                         </div>
                         <h2 class="text-3xl font-serif text-center"style="padding-bottom: 2%;">
                         TITLEHERE
@@ -95,8 +106,8 @@ if (user) {
                 replaceImg = replaceCaption.replaceAll("IMGSRCHERE", results[step].get("image")._url)
                 replaceLikes = replaceImg.replaceAll("NUMLIKESHERE", results[step].get("likes").length)
                 replacePostId = replaceLikes.replaceAll("POSTIDHERE", results[step].id)
-
-                if (results[step].get("poster") == user) {
+                
+                if (results[step].get("poster") == Parse.User.current().getUsername()) {
                     replaceHidden = replacePostId.replaceAll("HIDDENHERE", "")
                 }
                 else {

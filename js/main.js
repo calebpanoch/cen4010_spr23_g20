@@ -24,6 +24,8 @@ document.getElementById("logout").addEventListener("click", async function () {
   logout();
 });
 
+document.getElementById("profileLink").href = "./profile/?user=" + currentUsername
+
 function likePost(objectId) {
     if (!event) {
         event = window.event; 
