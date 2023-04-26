@@ -52,22 +52,28 @@ function deletePost(objectId) {
     }
 }
 
-function postComment(objectId) {
-    comment = document.getElementById(objectId+"comment").value
+
+async function postComment(objectId) {
+    debugger;
+    comment = document.getElementById(objectId + "comment").value;
     if (comment != "") {
-        queryObj = new Parse.Query(Posts);
-        queryObj.equalTo("objectId",objectId)
-        queryObj.first().then(function(result) {
+        let queryObj = new Parse.Query(Posts);
+        queryObj.equalTo("objectId", objectId);
+        try {
+            let result = await queryObj.first();
             /*newComment = new Comments();
             newComment.set("post",objectId)
             newComment.set("author",currentUsername)
             newComment.set("text",comment)
             newComment.save()*/
             //result.addUnique("comments",newComment)
-            result.addUnique("comments",currentUsername+": " + comment)
-            result.save()
+            result.addUnique("comments", currentUsername + ": " + comment);
+            await result.save();
+            // Reload the page after the save is completed
             location.reload();
-        });
+        } catch (error) {
+            console.error("Error saving comment:", error);
+        }
     }
 }
 
@@ -79,7 +85,7 @@ var newPost = `
                         </div>
                         <div class="pfp">
                             <img src="./assets/pfp.jpg" style="max-width: 3%;">
-                            <a href="/profile/?user=USERNAMEHERE" style="padding-left: 10px">USERNAMEHERE</a>
+                            <a href="./profile/?user=USERNAMEHERE" style="padding-left: 10px">USERNAMEHERE</a>
                         </div>
                         <h2 class="text-3xl font-serif text-center"style="padding-bottom: 2%;">
                         TITLEHERE
