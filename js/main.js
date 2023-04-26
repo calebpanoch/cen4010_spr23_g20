@@ -54,7 +54,6 @@ function deletePost(objectId) {
 
 
 async function postComment(objectId) {
-    debugger;
     comment = document.getElementById(objectId + "comment").value;
     if (comment != "") {
         let queryObj = new Parse.Query(Posts);
