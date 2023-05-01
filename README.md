@@ -23,5 +23,5 @@ The following **required** functionality is completed:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://www.youtube.com/watch?v=W2SnQGOpia4' title='Video Walkthrough' width=400 height=400 alt='Video Walkthrough' />
 
