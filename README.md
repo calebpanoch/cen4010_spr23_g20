@@ -23,5 +23,4 @@ The following **required** functionality is completed:
 
 Here's a walkthrough of implemented user stories:
 
-[FAU Social Board - YouTube](https://www.youtube.com/watch?v=W2SnQGOpia4)
-
+[![YT thumbnail](https://img.youtube.com/vi/W2SnQGOpia4/0.jpg)](https://www.youtube.com/watch?v=W2SnQGOpia4)
