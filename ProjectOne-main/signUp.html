@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BFKHJ2TC8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7BFKHJ2TC8');
+    </script>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FAU Social Board</title>
+    <meta name="keywords" content="Social Media Board Friends Space Meet New People">
+    <meta name="description" content="FAU Social Board">
+    <meta name="author" content="Team 20 Members">
+    <meta name="date" content="2023-03-28"><!--Latest Publishing Date -->
+    <meta property="og:title" content="FAU Social Board"> 
+    <meta property="og:image" content="">
+    <meta property="og:description" content="FAU Social Board - Social Media Website For Students at FAU">
+    <meta property="og:url" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%22-.1em%22 y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%22-.1em%22 y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>">
+    
+    <!-- This is the minified production version of parse js -->
+    <script
+      type="text/javascript"
+      src="https://npmcdn.com/parse/dist/parse.min.js"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/signUp.js" defer></script>
+  </head>
+  <body class="bg-grey-100">
+    <div class="bg-gradient-to-br from-sky-950 to-red-950">
+    <div class="flex justify-center items-center h-screen">
+      <div class="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-grey-800 mb-8">Sign Up</h2>
+        <form>
+          <div class="mb-6">
+            <label class="block font-semibold text-gray-700 mb-2" for="email">
+              Email
+            </label>
+            <input class="w-full px-3 py-2 border border-gray-400 rounded-lg focus:border-indigo-500" id="email" type="email" placeholder="Email" />
+          <div class="mb-6">
+            <label class="block font-semibold text-gray-700 mb-2" for="username">
+              Username
+            </label>
+            <input class="w-full px-3 py-2 border border-gray-400 rounded-lg focus:border-indigo-500" id="username" type="username" placeholder="Username" />
+          </div>
+          <div class="mb-6">
+            <label class="block font-semibold text-gray-700 mb-2" for="password">
+              Password
+            </label>
+            <input class="w-full px-3 py-2 border border-gray-400 rounded-lg focus:border-indigo-500" id="password" type="password" placeholder="Password" />
+          </div>
+          <div class="mb-6">
+            <button type="button" class="w-full bg-indigo-500 text-white font-semibold py-2 rounded-lg hover:bg-indigo-600 transition-colors duration-300" id="signUp">
+              Sign Up
+            </button>
+          </div>
+          <h2 id="errorOutput" style="color:red;"></h2> 
+          </div>
+        </form>
+        <a href="login.html">Already have an account? Login here</a>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
